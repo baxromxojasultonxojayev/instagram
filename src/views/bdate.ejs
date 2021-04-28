@@ -1,0 +1,56 @@
+<%- include('parts/header') %>
+
+<section class="vh-100 d-flex flex-column justify-content-center align-items-center bdate">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card text-center d-flex flex-column justify-content-center align-items-center p-4">
+          <img src="/image/bdate.svg" alt="Bdate image" class="w-50 img-fluid bdate-image">
+          <h1 class="h4 p-3">Add Your Birthday </h1>
+          <p class="mt-2">This won't be a part of your public profile.</p>
+          <form method="POST" >
+            <div class="d-flex">
+              <select name="bmonth" class="form-select ms-0">
+                <option value="jan">January</option>
+                <option value="feb">February</option>
+                <option value="march">March</option>
+                <option value="apr">April</option>
+                <option value="may">May</option>
+                <option value="june">June</option>
+                <option value="july">July</option>
+                <option value="aug">August</option>
+                <option value="sep">September</option>
+                <option value="oct">October</option>
+                <option value="nov">November</option>
+                <option value="dec">December</option>
+              </select>
+              <select name="bday" class="form-select ms-2">
+                <% for(let i = 1; i <= 31; i++) {%>
+                  <option value="<%= i %> "><%= i %> </option>
+                <% } %>
+              </select>
+              <select name="byear" class="form-select ms-2">
+                <% for(let i = 2016; i >= 1930; i--) {%>
+                  <option value="<%= i %> "><%= i %> </option>
+                <% } %>
+              </select>
+            </div>
+            <p class="text-muted mt-3">You need to enter the date you were born </p>
+            <p class="text-muted mt-3">Use your own birthday, even if this account is for a business, a pet, or something else</p>
+            <button class="w-100 mt-3 btn btn-primary" >Next</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card d-flex flex-column justify-content-center p-2 text-center align-items-center">
+          <p class="m-0 p-0">Have an account? <a href="/login">Log in</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<%- include('parts/footer') %>
